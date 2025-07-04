@@ -15,7 +15,7 @@ The **Upcycling Exchange Platform** is a web-based application built using Djang
 
 ## 🧰 Tech Stack
 - **Backend:** Django
-- **Frontend:** HTML, CSS (No JavaScript used)
+- **Frontend:** HTML, CSS ,JavaScript
 - **Database:** SQLite (default)
 - **Version Control:** Git + GitHub
 
