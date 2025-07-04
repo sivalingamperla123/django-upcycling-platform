@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <title>UpCycling Platform</title>
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="/static/css/font-awesome.css">
+
+    <link rel="stylesheet" href="/static/css/templatemo-hexashop.css">
+
+    <link rel="stylesheet" href="/static/css/owl-carousel.css">
+
+    <link rel="stylesheet" href="/static/css/lightbox.css">
+<!--
+
+TemplateMo 571 Hexashop
+
+https://templatemo.com/tm-571-hexashop
+
+-->
+    </head>
+    
+    <body>
+    
+    <!-- ***** Preloader Start ***** -->
+    <!-- <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>   -->
+    <!-- ***** Preloader End ***** -->
+    
+    {% block content %}
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="index.html" class="logo">
+                            <img src="/static/images/logo1.png" height="80px" width='200px'>
+                            
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="{% url 'index' %}" class="active"><bold>Home</bold></a></li>
+                            <li class="scroll-to-section"><a href="{% url 'about' %}">About</a></li>
+                            <li class="scroll-to-section"><a href="{% url 'login' %}">User</a></li>
+                            <li class="scroll-to-section"><a href="{% url 'adminlogin' %}">Admin</a></li>
+                            <!-- <li class="submenu">
+                                <a href="javascript:;">Products</a>
+                                <ul>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="products.html">Products</a></li>
+                                    <li><a href="single-product.html">Single Product</a></li>
+                                    <li><a href="contact.html">Contact Us</a></li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="javascript:;">Features</a>
+                                <ul>
+                                    <li><a href="#">Features Page 1</a></li>
+                                    <li><a href="#">Features Page 2</a></li>
+                                    <li><a href="#">Features Page 3</a></li>
+                                    <li><a rel="nofollow" href="https://templatemo.com/page/4" target="_blank">Template Page 4</a></li>
+                                </ul>
+                            </li> -->
+                            <!-- <li class="scroll-to-section"><a href="#explore">Explore</a></li> -->
+                        </ul>        
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+    {% block title %}
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class="page-heading" id="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="inner-content">
+                        <h2 style="margin-top: 100px;">UpCycling Platform</h2>
+                        <span>Only the best free upcycled products, designed for a sustainable future.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Main Banner Area End ***** -->
+
+    <!-- <div class="page-heading about-page-heading" id="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="inner-content">
+                        <h2>About Our Company</h2>
+                        <span>Awesome, clean &amp; creative HTML5 Template</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- ***** Main Banner Area End ***** -->
+    
+    <!-- ***** About Area Starts ***** -->
+    <div class="about-us">
+        <center><h1 style="margin-bottom: 60px; font-family: 'Times New Roman', Times, serif; font-weight: bold;">About</h1></center>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="left-image">
+                        <img src="/static/images/image123.webp" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="right-content">
+                        <h4>About Us    </h4>
+                        {% comment %} <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod kon tempor incididunt ut labore.</span> {% endcomment %}
+                        <div class="quote">
+                            <p>Welcome to our platform dedicated to community sharing and sustainability! Here, users can freely upload unwanted but still functional products for others to benefit from. Whether it's electronics, household items, clothing, or books, our website encourages a culture of reuse and resourcefulness.
+    
+                                Browse through a diverse range of listings to discover items you need without any cost. By participating, you contribute to reducing waste and promoting environmental stewardship. It's a collaborative effort where everyone plays a part in extending the life cycle of products and supporting a circular economy.
+                                
+                                Join our community today to give your items a second chance and find treasures others are generously sharing. Together, we can make a positive impact by fostering a culture of giving and sustainability.</p>
+                        </div>
+                        {% comment %} <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod kon tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                        </ul> {% endcomment %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ***** Men Area Starts ***** -->
+    
+    {% endblock %}
+{% endblock %}
+
+    <!-- jQuery -->
+    <script src="/static/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="/static/js/popper.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="/static/js/owl-carousel.js"></script>
+    <script src="/static/js/accordions.js"></script>
+    <script src="/static/js/datepicker.js"></script>
+    <script src="/static/js/scrollreveal.min.js"></script>
+    <script src="/static/js/waypoints.min.js"></script>
+    <script src="/static/js/jquery.counterup.min.js"></script>
+    <script src="/static/js/imgfix.min.js"></script> 
+    <script src="/static/js/slick.js"></script> 
+    <script src="/static/js/lightbox.js"></script> 
+    <script src="/static/js/isotope.js"></script> 
+    
+    <!-- Global Init -->
+    <script src="/static/js/custom.js"></script>
+
+    <script>
+
+        $(function() {
+            var selectedClass = "";
+            $("p").click(function(){
+            selectedClass = $(this).attr("data-rel");
+            $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("."+selectedClass).fadeOut();
+            setTimeout(function() {
+              $("."+selectedClass).fadeIn();
+              $("#portfolio").fadeTo(50, 1);
+            }, 500);
+                
+            });
+        });
+
+    </script>
+
+
+
+  </body>
+</html>

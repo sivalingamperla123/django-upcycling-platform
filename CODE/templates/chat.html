@@ -1,0 +1,94 @@
+{% extends "home.html" %}
+{% block title %}
+  <style>
+    .chat-container {
+      width: 35rem;
+      height: 25rem;
+      border-radius: 25px;
+      margin: 0 auto;
+      margin-top: 10rem;
+      background-color: #F5F5F4;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chat-header {
+      background-color: #577ad8;
+      border-radius: 25px 25px 0 0;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .messages {
+      flex: 1;
+      overflow-y: scroll;
+      padding: 1rem;
+    }
+
+    .message {
+      margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .message .email {
+      font-weight: bold;
+      margin-right: 1rem;
+    }
+
+    .message .text {
+      flex: 1; /* Allows the text to take up the remaining space */
+    }
+
+    .message .timestamp {
+      font-size: 10px;
+      color: #B2BDC0;
+    }
+
+    .message-input {
+      background-color: #577ad8;
+      padding: 1rem;
+      border-top: 1px solid #ccc;
+    }
+
+    .message-input input[type="text"] {
+      width: calc(100% - 80px);
+      margin-right: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 0.5rem;
+    }
+
+    .message-input input[type="submit"] {
+      background-color: #4CAF50;
+      border: 1px solid #11a05d;
+      color: #fff;
+      border-radius: 5px;
+      padding: 0.5rem;
+      cursor: pointer;
+    }
+  </style>
+
+  <div class="chat-container">
+    <div class="chat-header">
+      <h2>Chat</h2>
+    </div>
+    <div class="messages" id="messages">
+      {% for message in chats %}
+        <div class="message">
+          <div class="email">{{ message.email }}:</div>
+          <div class="text">{{ message.chat }}</div>
+          <div class="timestamp">{{ message.timestamp }}</div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="message-input">
+      <form id="message-form" action="{% url 'chat' id mail %}" method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="Start typing..." name="message" id="message" onkeydown="sendMessage(event)">
+        <input type="submit" name="send" value="Send" id="send-btn">
+      </form>
+    </div>
+  </div>
+{% endblock %}

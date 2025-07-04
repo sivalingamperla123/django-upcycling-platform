@@ -1,0 +1,137 @@
+{% extends "home.html" %}
+{% block title %}
+<title>User Activation</title>
+<style>
+    /* Your existing CSS styles */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0aa8a;
+        padding: 120px; /* Adjust padding as needed */
+    }
+    .table-container {
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 20px;
+        overflow-x: auto; /* Horizontal scroll */
+    }
+    table {
+        width: 100%; /* Full width */
+        border-collapse: collapse;
+        background-color: #fff; /* Table background color */
+    }
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: center;
+        padding: 8px;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+    .add-stock-button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+    .add-stock-button:hover {
+        background-color: #45a049;
+    }
+    h1 {
+        color: #fff;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .modal-dialog {
+        max-width: 30%; /* Adjust modal width as needed */
+    }
+    .modal-content {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Optional: Add box shadow for modal */
+    }
+    .modal-header {
+        border-bottom: none; /* Optional: Remove border from modal header */
+    }
+    .modal-title {
+        font-weight: bold;
+    }
+    .img-fluid {
+        max-width: 100%; /* Ensure image fits within modal */
+        height: auto;
+    }
+</style>
+
+</head>
+<body>
+    
+<div class="table-container">
+    <h1>View Users</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>Date Of Birth</th>
+                <th>Contact</th>
+                <th>Address</th>
+                <th>Proof</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        {% for i in data %}
+        <tbody>
+            <tr>
+                <td>{{ i.name }}</td>
+                <td>{{ i.email }}</td>
+                <td>{{ i.gender }}</td>
+                <td>{{ i.dob }}</td>
+                <td>{{ i.contact }}</td>
+                <td>{{ i.address }}</td>
+                <td><a href="#" onclick="showImage('{{ i.proof }}')">{{ i.proof }}</a></td>
+                <td>{{ i.status }}</td>
+                <td>
+                    <div style="display: flex; justify-content: center;">
+                        <a href="{% url 'acceptusers' i.id %}" class="add-stock-button">Accept</a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+
+<!-- Modal to display image -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="imageModalLabel">Proof Image</h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <img id="modalImage" src="" class="img-fluid" alt="Proof Image" style="max-height: 300px;">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showImage(imagePath) {
+        var modalImage = document.getElementById('modalImage');
+        modalImage.src = imagePath;
+        $('#imageModal').modal('show');
+    }
+</script>
+
+<!-- Bootstrap JS (Ensure you have included Bootstrap's CSS and JS files in your base template) -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+{% endblock %}
