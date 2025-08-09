@@ -1,0 +1,22 @@
+# Python files (Django backend code)
+*.py linguist-language=Python
+
+# Django HTML templates
+*.html linguist-language=HTML
+
+# Optional: If you have files with .djhtml or .django extension, mark them too
+*.djhtml linguist-language=HTML
+*.django linguist-language=HTML
+
+# CSS files
+*.css linguist-language=CSS
+
+# JavaScript files
+*.js linguist-language=JavaScript
+
+# Include static and media folders in language stats
+static/** linguist-vendored=false
+media/** linguist-vendored=false
+
+# Do not exclude Django migrations from stats
+**/migrations/** linguist-vendored=false
