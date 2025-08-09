@@ -1,7 +1,0 @@
-# Force GitHub Linguist to detect correct languages
-*.html linguist-language=HTML
-*.css linguist-language=CSS
-*.py linguist-language=Python
-
-# Remove JS from stats
-*.js linguist-detectable=false
